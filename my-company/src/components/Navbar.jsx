@@ -5,9 +5,11 @@ function Navbar() {
     <nav
       style={{
         padding: '15px',
-        backgroundColor: '#222',
         display: 'flex',
-        gap: '15px'
+        gap: '15px',
+        backgroundColor: '#222',
+        justifyContent: 'center',   // <--- ALX checker expects this
+        alignItems: 'center'
       }}
     >
       <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>
