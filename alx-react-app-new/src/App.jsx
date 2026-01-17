@@ -1,3 +1,4 @@
+import Counter from './components/Counter'
 import UserProfile from './components/UserProfile'
 import Header from './components/Header'
 import MainContent from './components/MainContent'
@@ -13,6 +14,11 @@ function App() {
 
   return (
     <>
+      <div>
+      <h1>My React App</h1>
+      <Counter />
+    </div>
+
       <div>
        <Header />
        <MainContent />
