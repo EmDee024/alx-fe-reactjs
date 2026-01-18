@@ -14,7 +14,6 @@ function App() {
   const userData = { name: "Jane Doe", email: "jane.doe@example.com" };
   const [count, setCount] = useState(0)
   
-
   return (
     <>
      <UserContext.Provider value={userData}>
