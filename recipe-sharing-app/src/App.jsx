@@ -1,3 +1,5 @@
+import FavoritesList from './components/FavoritesList';
+import RecommendationsList from './components/RecommendationsList';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AddRecipeForm from './components/AddRecipeForm';
 import RecipeList from './components/RecipeList';
@@ -13,14 +15,16 @@ function App() {
 
       <Routes>
         <Route
-          path="/"
-          element={
-            <>
-              <AddRecipeForm />
-              <RecipeList />
-            </>
-          }
-        />
+  path="/"
+  element={
+    <>
+      <AddRecipeForm />
+      <RecipeList />
+      <FavoritesList />
+      <RecommendationsList />
+    </>
+      }
+     />
         <Route path="/recipes/:id" element={<RecipeDetails />} />
       </Routes>
     </Router>
