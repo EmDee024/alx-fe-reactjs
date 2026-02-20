@@ -1,26 +1,27 @@
-import { Routes, Route, Link } from "react-router-dom";
-import ProfileDetails from "../pages/ProfileDetails";
-import ProfileSettings from "../pages/ProfileSettings";
-import ProtectedRoute from "../components/ProtectedRoute";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Profile from "./components/Profile";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
 
-function Profile() {
+function App() {
   return (
-    <ProtectedRoute>
-      <div>
-        <h2>Profile Page</h2>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
 
-        <nav>
-          <Link to="details">Details</Link> |{" "}
-          <Link to="settings">Settings</Link>
-        </nav>
-
-        <Routes>
-          <Route path="details" element={<ProfileDetails />} />
-          <Route path="settings" element={<ProfileSettings />} />
-        </Routes>
-      </div>
-    </ProtectedRoute>
+        <Route
+          path="/profile/*"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
+    </Router>
   );
 }
 
-export default Profile;
+export default App;
